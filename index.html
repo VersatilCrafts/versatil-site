@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VersátilCrafts - Cimento & Sarcasmo</title>
+  <title>VersátilCrafts - Loja Freakalhoca</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --neon-pink: #ff00aa;
-      --neon-green: #39ff14;
-      --dark-bg: #0f0f0f;
-      --gray-bg: #1a1a1a;
-      --accent: #ff0080;
+      --accent-color: #ff0077;
+      --text-dark: #222;
+      --bg-light: #fff;
+      --gray: #666;
+      --border-light: #e0e0e0;
     }
 
     * {
@@ -21,53 +21,54 @@
     body {
       margin: 0;
       font-family: 'Space Grotesk', sans-serif;
-      background-color: var(--dark-bg);
-      color: #f4f4f4;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
     }
 
     header {
-      background: linear-gradient(90deg, var(--accent), #7928ca);
-      padding: 1.5rem;
+      background: var(--bg-light);
+      padding: 2rem 1rem;
       text-align: center;
       font-family: 'Archivo Black', sans-serif;
-      font-size: 1.8rem;
-      text-transform: uppercase;
+      font-size: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background: #fafafa;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
     }
 
     section.hero {
       padding: 3rem 2rem;
       text-align: center;
-      background: var(--gray-bg);
+      background: #f9f9f9;
     }
 
     section.hero h1 {
-      font-size: 2.8rem;
-      color: var(--neon-pink);
+      font-size: 2.5rem;
+      color: var(--accent-color);
     }
 
     section.hero p {
       font-size: 1.2rem;
-      margin-top: 0.8rem;
-      color: #ccc;
-    }
-
-    nav {
-      background: #121212;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-    }
-
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease-in-out;
-    }
-
-    nav a:hover {
-      color: var(--neon-green);
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .products {
@@ -75,21 +76,19 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       padding: 3rem;
-      background-color: var(--gray-bg);
     }
 
     .product {
-      background-color: #222;
+      border: 1px solid var(--border-light);
       border-radius: 12px;
-      padding: 1.2rem;
+      padding: 1.5rem;
       text-align: center;
-      transition: 0.3s ease-in-out;
-      box-shadow: 0 0 15px #111;
+      background: white;
+      transition: box-shadow 0.2s ease;
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px var(--neon-pink);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     }
 
     .product img {
@@ -99,39 +98,41 @@
     }
 
     .product h3 {
-      color: var(--neon-pink);
       margin: 0.5rem 0;
+      color: var(--accent-color);
     }
 
     .product p {
-      color: #ccc;
+      font-size: 0.95rem;
+      color: var(--gray);
     }
 
     .snipcart-add-item {
-      background-color: var(--neon-pink);
+      background-color: var(--accent-color);
       color: white;
       border: none;
-      padding: 0.7rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       font-weight: bold;
       cursor: pointer;
-      margin-top: 1rem;
       border-radius: 6px;
       font-size: 0.9rem;
+      margin-top: 1rem;
     }
 
     footer {
-      background: #0a0a0a;
-      padding: 1.2rem;
+      padding: 2rem 1rem;
       text-align: center;
       font-size: 0.85rem;
-      color: #666;
+      color: var(--gray);
+      background: #fafafa;
+      border-top: 1px solid var(--border-light);
     }
   </style>
 </head>
 <body>
 
 <header>
-  VersátilCrafts™ — Cimento, Cor & Caos
+  VersátilCrafts — Cimento, Cor & Caos
 </header>
 
 <nav>
@@ -142,7 +143,7 @@
 
 <section class="hero">
   <h1>Bem-vind@ à loja freakalhoca</h1>
-  <p>Cada peça tem atitude. Se procurares algo discreto... azar.</p>
+  <p>Decoração feita com alma, cimento e zero vontade de agradar a todos.</p>
 </section>
 
 <section id="produtos" class="products">
@@ -159,15 +160,13 @@
       data-item-description="Peça artesanal freakalhoca feita com Jesmonite e amor agressivo."
     >Comprar</button>
   </div>
-
-  <!-- Adiciona mais produtos aqui! -->
 </section>
 
 <footer>
   Feito à mão por duas amigas com costas lixadas e talento discutível. | @versatilcrafts
 </footer>
 
-<!-- SNIPCART -->
+<!-- SNIPCART INTEGRATION -->
 <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 <div hidden id="snipcart" data-api-key="AQUI_VAI_TUA_API_KEY_DO_SNIPCART"></div>
