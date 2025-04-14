@@ -3,63 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VersátilCrafts - Loja Freakalhoca</title>
+  <title>VersátilCrafts - Cimento & Sarcasmo</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --neon-pink: #ff00aa;
+      --neon-green: #39ff14;
+      --dark-bg: #0f0f0f;
+      --gray-bg: #1a1a1a;
+      --accent: #ff0080;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Space Grotesk', sans-serif;
-      background-color: #0f0f0f;
+      background-color: var(--dark-bg);
       color: #f4f4f4;
     }
+
     header {
-      background: linear-gradient(90deg, #ff0080, #7928ca);
+      background: linear-gradient(90deg, var(--accent), #7928ca);
       padding: 1.5rem;
       text-align: center;
       font-family: 'Archivo Black', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-transform: uppercase;
     }
+
     section.hero {
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
-      background: #1a1a1a;
+      background: var(--gray-bg);
     }
+
     section.hero h1 {
-      font-size: 2.5rem;
-      color: #ff00aa;
+      font-size: 2.8rem;
+      color: var(--neon-pink);
     }
+
     section.hero p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      margin-top: 0.8rem;
+      color: #ccc;
     }
+
+    nav {
+      background: #121212;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      color: var(--neon-green);
+    }
+
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      background-color: var(--gray-bg);
     }
+
     .product {
       background-color: #222;
       border-radius: 12px;
-      padding: 1rem;
+      padding: 1.2rem;
       text-align: center;
-      transition: 0.2s ease-in-out;
+      transition: 0.3s ease-in-out;
+      box-shadow: 0 0 15px #111;
     }
+
     .product:hover {
-      transform: scale(1.02);
-      background-color: #2a2a2a;
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px var(--neon-pink);
     }
+
     .product img {
       max-width: 100%;
       border-radius: 8px;
+      margin-bottom: 1rem;
     }
+
     .product h3 {
-      color: #ff00aa;
+      color: var(--neon-pink);
       margin: 0.5rem 0;
     }
+
+    .product p {
+      color: #ccc;
+    }
+
     .snipcart-add-item {
-      background-color: #ff0080;
+      background-color: var(--neon-pink);
       color: white;
       border: none;
       padding: 0.7rem 1.2rem;
@@ -67,13 +116,15 @@
       cursor: pointer;
       margin-top: 1rem;
       border-radius: 6px;
+      font-size: 0.9rem;
     }
+
     footer {
       background: #0a0a0a;
-      padding: 1rem;
+      padding: 1.2rem;
       text-align: center;
-      font-size: 0.8rem;
-      color: #888;
+      font-size: 0.85rem;
+      color: #666;
     }
   </style>
 </head>
@@ -83,12 +134,18 @@
   VersátilCrafts™ — Cimento, Cor & Caos
 </header>
 
+<nav>
+  <a href="#produtos">Produtos</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
 <section class="hero">
   <h1>Bem-vind@ à loja freakalhoca</h1>
   <p>Cada peça tem atitude. Se procurares algo discreto... azar.</p>
 </section>
 
-<section class="products">
+<section id="produtos" class="products">
   <div class="product">
     <img src="URL_DA_IMAGEM_AQUI" alt="Middle Finger Neon">
     <h3>Middle Finger Neon</h3>
@@ -103,14 +160,14 @@
     >Comprar</button>
   </div>
 
-  <!-- Repetir este bloco para mais produtos -->
+  <!-- Adiciona mais produtos aqui! -->
 </section>
 
 <footer>
   Feito à mão por duas amigas com costas lixadas e talento discutível. | @versatilcrafts
 </footer>
 
-<!-- SNIPCART INTEGRATION -->
+<!-- SNIPCART -->
 <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
 <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
 <div hidden id="snipcart" data-api-key="AQUI_VAI_TUA_API_KEY_DO_SNIPCART"></div>
